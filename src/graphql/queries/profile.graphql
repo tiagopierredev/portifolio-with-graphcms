@@ -1,0 +1,18 @@
+query Profile {
+  profile(where: { slug: "profile" }) {
+    name
+    bio
+    skills
+    office
+    contact {
+      link
+      name
+      image {
+        url(transformation: { image: { resize: {} } })
+      }
+    }
+    photo {
+      url
+    }
+  }
+}

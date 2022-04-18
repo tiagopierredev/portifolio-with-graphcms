@@ -1,0 +1,22 @@
+.container {
+  list-style: none;
+  display: grid;
+  gap: 2rem;
+  li {
+    a {
+      display: flex;
+      align-items: center;
+      font-size: 1.3rem;
+      font-weight: 400;
+
+      img {
+        margin-right: 2rem;
+      }
+
+      &:hover {
+        filter: opacity(0.7);
+        color: var(--text-color);
+      }
+    }
+  }
+}
