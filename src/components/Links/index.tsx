@@ -1,26 +1,26 @@
-import { Contact } from "../../generated/graphql";
-import { Box } from "../Box";
-import styles from "./styles.module.scss";
+import { Contact } from '../../generated/graphql'
+import { Box } from '../Box'
+import styles from './styles.module.scss'
 
 interface LinksProps {
-  links: Contact[];
+  contacts: Array<Contact>
 }
 
-export function Links({ links }: LinksProps) {
+export function Links({ contacts }: LinksProps) {
   return (
     <Box>
       <ul className={styles.container}>
-        {links.map((link) => {
+        {contacts?.map(contact => {
           return (
-            <li>
-              <a href={link.link}>
-                <img src={link.image.url} alt={link.name} />
-                {link.name}
+            <li key={contact.id}>
+              <a href={contact.link}>
+                <img src={contact.image.url} alt={contact.name} />
+                {contact.name}
               </a>
             </li>
-          );
+          )
         })}
       </ul>
     </Box>
-  );
+  )
 }

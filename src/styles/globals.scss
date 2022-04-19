@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  font-family: "Merriweather Sans", sans-serif;
+  font-family: 'Merriweather Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   background-color: var(--background-app);
@@ -37,4 +37,8 @@ a {
 
 a:hover {
   color: var(--background-skills);
+}
+
+ul {
+  list-style: none;
 }

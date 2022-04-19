@@ -1,9 +1,9 @@
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 
 interface BoxProps {
-  children: JSX.Element;
+  children: JSX.Element[] | JSX.Element
 }
 
 export function Box({ children }: BoxProps) {
-  return <div className={styles.container}>{children}</div>;
+  return <div className={styles.container}>{children}</div>
 }
