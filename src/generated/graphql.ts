@@ -1666,8 +1666,8 @@ export type Mutation = {
    * @deprecated Asset mutations will be overhauled soon
    */
   createAsset?: Maybe<Asset>;
-  /** Create one page */
-  createPage?: Maybe<Page>;
+  /** Create one post */
+  createPost?: Maybe<Post>;
   /** Create one profile */
   createProfile?: Maybe<Profile>;
   /** Create one scheduledRelease */
@@ -1682,12 +1682,12 @@ export type Mutation = {
   /** Delete many Asset documents, return deleted documents */
   deleteManyAssetsConnection: AssetConnection;
   /**
-   * Delete many Page documents
-   * @deprecated Please use the new paginated many mutation (deleteManyPagesConnection)
+   * Delete many Post documents
+   * @deprecated Please use the new paginated many mutation (deleteManyPostsConnection)
    */
-  deleteManyPages: BatchPayload;
-  /** Delete many Page documents, return deleted documents */
-  deleteManyPagesConnection: PageConnection;
+  deleteManyPosts: BatchPayload;
+  /** Delete many Post documents, return deleted documents */
+  deleteManyPostsConnection: PostConnection;
   /**
    * Delete many Profile documents
    * @deprecated Please use the new paginated many mutation (deleteManyProfilesConnection)
@@ -1695,8 +1695,8 @@ export type Mutation = {
   deleteManyProfiles: BatchPayload;
   /** Delete many Profile documents, return deleted documents */
   deleteManyProfilesConnection: ProfileConnection;
-  /** Delete one page from _all_ existing stages. Returns deleted document. */
-  deletePage?: Maybe<Page>;
+  /** Delete one post from _all_ existing stages. Returns deleted document. */
+  deletePost?: Maybe<Post>;
   /** Delete one profile from _all_ existing stages. Returns deleted document. */
   deleteProfile?: Maybe<Profile>;
   /** Delete and return scheduled operation */
@@ -1713,12 +1713,12 @@ export type Mutation = {
   /** Publish many Asset documents */
   publishManyAssetsConnection: AssetConnection;
   /**
-   * Publish many Page documents
-   * @deprecated Please use the new paginated many mutation (publishManyPagesConnection)
+   * Publish many Post documents
+   * @deprecated Please use the new paginated many mutation (publishManyPostsConnection)
    */
-  publishManyPages: BatchPayload;
-  /** Publish many Page documents */
-  publishManyPagesConnection: PageConnection;
+  publishManyPosts: BatchPayload;
+  /** Publish many Post documents */
+  publishManyPostsConnection: PostConnection;
   /**
    * Publish many Profile documents
    * @deprecated Please use the new paginated many mutation (publishManyProfilesConnection)
@@ -1726,20 +1726,20 @@ export type Mutation = {
   publishManyProfiles: BatchPayload;
   /** Publish many Profile documents */
   publishManyProfilesConnection: ProfileConnection;
-  /** Publish one page */
-  publishPage?: Maybe<Page>;
+  /** Publish one post */
+  publishPost?: Maybe<Post>;
   /** Publish one profile */
   publishProfile?: Maybe<Profile>;
   /** Schedule to publish one asset */
   schedulePublishAsset?: Maybe<Asset>;
-  /** Schedule to publish one page */
-  schedulePublishPage?: Maybe<Page>;
+  /** Schedule to publish one post */
+  schedulePublishPost?: Maybe<Post>;
   /** Schedule to publish one profile */
   schedulePublishProfile?: Maybe<Profile>;
   /** Unpublish one asset from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   scheduleUnpublishAsset?: Maybe<Asset>;
-  /** Unpublish one page from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
-  scheduleUnpublishPage?: Maybe<Page>;
+  /** Unpublish one post from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
+  scheduleUnpublishPost?: Maybe<Post>;
   /** Unpublish one profile from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   scheduleUnpublishProfile?: Maybe<Profile>;
   /** Unpublish one asset from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
@@ -1752,12 +1752,12 @@ export type Mutation = {
   /** Find many Asset documents that match criteria in specified stage and unpublish from target stages */
   unpublishManyAssetsConnection: AssetConnection;
   /**
-   * Unpublish many Page documents
-   * @deprecated Please use the new paginated many mutation (unpublishManyPagesConnection)
+   * Unpublish many Post documents
+   * @deprecated Please use the new paginated many mutation (unpublishManyPostsConnection)
    */
-  unpublishManyPages: BatchPayload;
-  /** Find many Page documents that match criteria in specified stage and unpublish from target stages */
-  unpublishManyPagesConnection: PageConnection;
+  unpublishManyPosts: BatchPayload;
+  /** Find many Post documents that match criteria in specified stage and unpublish from target stages */
+  unpublishManyPostsConnection: PostConnection;
   /**
    * Unpublish many Profile documents
    * @deprecated Please use the new paginated many mutation (unpublishManyProfilesConnection)
@@ -1765,8 +1765,8 @@ export type Mutation = {
   unpublishManyProfiles: BatchPayload;
   /** Find many Profile documents that match criteria in specified stage and unpublish from target stages */
   unpublishManyProfilesConnection: ProfileConnection;
-  /** Unpublish one page from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
-  unpublishPage?: Maybe<Page>;
+  /** Unpublish one post from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
+  unpublishPost?: Maybe<Post>;
   /** Unpublish one profile from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   unpublishProfile?: Maybe<Profile>;
   /** Update one asset */
@@ -1779,12 +1779,12 @@ export type Mutation = {
   /** Update many Asset documents */
   updateManyAssetsConnection: AssetConnection;
   /**
-   * Update many pages
-   * @deprecated Please use the new paginated many mutation (updateManyPagesConnection)
+   * Update many posts
+   * @deprecated Please use the new paginated many mutation (updateManyPostsConnection)
    */
-  updateManyPages: BatchPayload;
-  /** Update many Page documents */
-  updateManyPagesConnection: PageConnection;
+  updateManyPosts: BatchPayload;
+  /** Update many Post documents */
+  updateManyPostsConnection: PostConnection;
   /**
    * Update many profiles
    * @deprecated Please use the new paginated many mutation (updateManyProfilesConnection)
@@ -1792,16 +1792,16 @@ export type Mutation = {
   updateManyProfiles: BatchPayload;
   /** Update many Profile documents */
   updateManyProfilesConnection: ProfileConnection;
-  /** Update one page */
-  updatePage?: Maybe<Page>;
+  /** Update one post */
+  updatePost?: Maybe<Post>;
   /** Update one profile */
   updateProfile?: Maybe<Profile>;
   /** Update one scheduledRelease */
   updateScheduledRelease?: Maybe<ScheduledRelease>;
   /** Upsert one asset */
   upsertAsset?: Maybe<Asset>;
-  /** Upsert one page */
-  upsertPage?: Maybe<Page>;
+  /** Upsert one post */
+  upsertPost?: Maybe<Post>;
   /** Upsert one profile */
   upsertProfile?: Maybe<Profile>;
 };
@@ -1812,8 +1812,8 @@ export type MutationCreateAssetArgs = {
 };
 
 
-export type MutationCreatePageArgs = {
-  data: PageCreateInput;
+export type MutationCreatePostArgs = {
+  data: PostCreateInput;
 };
 
 
@@ -1847,18 +1847,18 @@ export type MutationDeleteManyAssetsConnectionArgs = {
 };
 
 
-export type MutationDeleteManyPagesArgs = {
-  where?: InputMaybe<PageManyWhereInput>;
+export type MutationDeleteManyPostsArgs = {
+  where?: InputMaybe<PostManyWhereInput>;
 };
 
 
-export type MutationDeleteManyPagesConnectionArgs = {
+export type MutationDeleteManyPostsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
   before?: InputMaybe<Scalars['ID']>;
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
   skip?: InputMaybe<Scalars['Int']>;
-  where?: InputMaybe<PageManyWhereInput>;
+  where?: InputMaybe<PostManyWhereInput>;
 };
 
 
@@ -1877,8 +1877,8 @@ export type MutationDeleteManyProfilesConnectionArgs = {
 };
 
 
-export type MutationDeletePageArgs = {
-  where: PageWhereUniqueInput;
+export type MutationDeletePostArgs = {
+  where: PostWhereUniqueInput;
 };
 
 
@@ -1930,13 +1930,13 @@ export type MutationPublishManyAssetsConnectionArgs = {
 };
 
 
-export type MutationPublishManyPagesArgs = {
+export type MutationPublishManyPostsArgs = {
   to?: Array<Stage>;
-  where?: InputMaybe<PageManyWhereInput>;
+  where?: InputMaybe<PostManyWhereInput>;
 };
 
 
-export type MutationPublishManyPagesConnectionArgs = {
+export type MutationPublishManyPostsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
   before?: InputMaybe<Scalars['ID']>;
   first?: InputMaybe<Scalars['Int']>;
@@ -1944,7 +1944,7 @@ export type MutationPublishManyPagesConnectionArgs = {
   last?: InputMaybe<Scalars['Int']>;
   skip?: InputMaybe<Scalars['Int']>;
   to?: Array<Stage>;
-  where?: InputMaybe<PageManyWhereInput>;
+  where?: InputMaybe<PostManyWhereInput>;
 };
 
 
@@ -1966,9 +1966,9 @@ export type MutationPublishManyProfilesConnectionArgs = {
 };
 
 
-export type MutationPublishPageArgs = {
+export type MutationPublishPostArgs = {
   to?: Array<Stage>;
-  where: PageWhereUniqueInput;
+  where: PostWhereUniqueInput;
 };
 
 
@@ -1989,11 +1989,11 @@ export type MutationSchedulePublishAssetArgs = {
 };
 
 
-export type MutationSchedulePublishPageArgs = {
+export type MutationSchedulePublishPostArgs = {
   releaseAt?: InputMaybe<Scalars['DateTime']>;
   releaseId?: InputMaybe<Scalars['String']>;
   to?: Array<Stage>;
-  where: PageWhereUniqueInput;
+  where: PostWhereUniqueInput;
 };
 
 
@@ -2015,11 +2015,11 @@ export type MutationScheduleUnpublishAssetArgs = {
 };
 
 
-export type MutationScheduleUnpublishPageArgs = {
+export type MutationScheduleUnpublishPostArgs = {
   from?: Array<Stage>;
   releaseAt?: InputMaybe<Scalars['DateTime']>;
   releaseId?: InputMaybe<Scalars['String']>;
-  where: PageWhereUniqueInput;
+  where: PostWhereUniqueInput;
 };
 
 
@@ -2061,13 +2061,13 @@ export type MutationUnpublishManyAssetsConnectionArgs = {
 };
 
 
-export type MutationUnpublishManyPagesArgs = {
+export type MutationUnpublishManyPostsArgs = {
   from?: Array<Stage>;
-  where?: InputMaybe<PageManyWhereInput>;
+  where?: InputMaybe<PostManyWhereInput>;
 };
 
 
-export type MutationUnpublishManyPagesConnectionArgs = {
+export type MutationUnpublishManyPostsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
   before?: InputMaybe<Scalars['ID']>;
   first?: InputMaybe<Scalars['Int']>;
@@ -2075,7 +2075,7 @@ export type MutationUnpublishManyPagesConnectionArgs = {
   last?: InputMaybe<Scalars['Int']>;
   skip?: InputMaybe<Scalars['Int']>;
   stage?: InputMaybe<Stage>;
-  where?: InputMaybe<PageManyWhereInput>;
+  where?: InputMaybe<PostManyWhereInput>;
 };
 
 
@@ -2097,9 +2097,9 @@ export type MutationUnpublishManyProfilesConnectionArgs = {
 };
 
 
-export type MutationUnpublishPageArgs = {
+export type MutationUnpublishPostArgs = {
   from?: Array<Stage>;
-  where: PageWhereUniqueInput;
+  where: PostWhereUniqueInput;
 };
 
 
@@ -2132,20 +2132,20 @@ export type MutationUpdateManyAssetsConnectionArgs = {
 };
 
 
-export type MutationUpdateManyPagesArgs = {
-  data: PageUpdateManyInput;
-  where?: InputMaybe<PageManyWhereInput>;
+export type MutationUpdateManyPostsArgs = {
+  data: PostUpdateManyInput;
+  where?: InputMaybe<PostManyWhereInput>;
 };
 
 
-export type MutationUpdateManyPagesConnectionArgs = {
+export type MutationUpdateManyPostsConnectionArgs = {
   after?: InputMaybe<Scalars['ID']>;
   before?: InputMaybe<Scalars['ID']>;
-  data: PageUpdateManyInput;
+  data: PostUpdateManyInput;
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
   skip?: InputMaybe<Scalars['Int']>;
-  where?: InputMaybe<PageManyWhereInput>;
+  where?: InputMaybe<PostManyWhereInput>;
 };
 
 
@@ -2166,9 +2166,9 @@ export type MutationUpdateManyProfilesConnectionArgs = {
 };
 
 
-export type MutationUpdatePageArgs = {
-  data: PageUpdateInput;
-  where: PageWhereUniqueInput;
+export type MutationUpdatePostArgs = {
+  data: PostUpdateInput;
+  where: PostWhereUniqueInput;
 };
 
 
@@ -2190,9 +2190,9 @@ export type MutationUpsertAssetArgs = {
 };
 
 
-export type MutationUpsertPageArgs = {
-  upsert: PageUpsertInput;
-  where: PageWhereUniqueInput;
+export type MutationUpsertPostArgs = {
+  upsert: PostUpsertInput;
+  where: PostWhereUniqueInput;
 };
 
 
@@ -2207,123 +2207,6 @@ export type Node = {
   id: Scalars['ID'];
   /** The Stage of an object */
   stage: Stage;
-};
-
-/** Retorna dados de páginas. */
-export type Page = Node & {
-  __typename?: 'Page';
-  /** The time the document was created */
-  createdAt: Scalars['DateTime'];
-  /** User that created this document */
-  createdBy?: Maybe<User>;
-  /** Get the document in other stages */
-  documentInStages: Array<Page>;
-  /** List of Page versions */
-  history: Array<Version>;
-  /** The unique identifier */
-  id: Scalars['ID'];
-  /** The time the document was published. Null on documents in draft stage. */
-  publishedAt?: Maybe<Scalars['DateTime']>;
-  /** User that last published this document */
-  publishedBy?: Maybe<User>;
-  scheduledIn: Array<ScheduledOperation>;
-  /** System stage field */
-  stage: Stage;
-  /** The time the document was updated */
-  updatedAt: Scalars['DateTime'];
-  /** User that last updated this document */
-  updatedBy?: Maybe<User>;
-};
-
-
-/** Retorna dados de páginas. */
-export type PageCreatedByArgs = {
-  locales?: InputMaybe<Array<Locale>>;
-};
-
-
-/** Retorna dados de páginas. */
-export type PageDocumentInStagesArgs = {
-  includeCurrent?: Scalars['Boolean'];
-  inheritLocale?: Scalars['Boolean'];
-  stages?: Array<Stage>;
-};
-
-
-/** Retorna dados de páginas. */
-export type PageHistoryArgs = {
-  limit?: Scalars['Int'];
-  skip?: Scalars['Int'];
-  stageOverride?: InputMaybe<Stage>;
-};
-
-
-/** Retorna dados de páginas. */
-export type PagePublishedByArgs = {
-  locales?: InputMaybe<Array<Locale>>;
-};
-
-
-/** Retorna dados de páginas. */
-export type PageScheduledInArgs = {
-  after?: InputMaybe<Scalars['String']>;
-  before?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
-  locales?: InputMaybe<Array<Locale>>;
-  skip?: InputMaybe<Scalars['Int']>;
-  where?: InputMaybe<ScheduledOperationWhereInput>;
-};
-
-
-/** Retorna dados de páginas. */
-export type PageUpdatedByArgs = {
-  locales?: InputMaybe<Array<Locale>>;
-};
-
-export type PageConnectInput = {
-  /** Allow to specify document position in list of connected documents, will default to appending at end of list */
-  position?: InputMaybe<ConnectPositionInput>;
-  /** Document to connect */
-  where: PageWhereUniqueInput;
-};
-
-/** A connection to a list of items. */
-export type PageConnection = {
-  __typename?: 'PageConnection';
-  aggregate: Aggregate;
-  /** A list of edges. */
-  edges: Array<PageEdge>;
-  /** Information to aid in pagination. */
-  pageInfo: PageInfo;
-};
-
-export type PageCreateInput = {
-  createdAt?: InputMaybe<Scalars['DateTime']>;
-  updatedAt?: InputMaybe<Scalars['DateTime']>;
-};
-
-export type PageCreateManyInlineInput = {
-  /** Connect multiple existing Page documents */
-  connect?: InputMaybe<Array<PageWhereUniqueInput>>;
-  /** Create and connect multiple existing Page documents */
-  create?: InputMaybe<Array<PageCreateInput>>;
-};
-
-export type PageCreateOneInlineInput = {
-  /** Connect one existing Page document */
-  connect?: InputMaybe<PageWhereUniqueInput>;
-  /** Create and connect one Page document */
-  create?: InputMaybe<PageCreateInput>;
-};
-
-/** An edge in a connection. */
-export type PageEdge = {
-  __typename?: 'PageEdge';
-  /** A cursor for use in pagination. */
-  cursor: Scalars['String'];
-  /** The item at the end of the edge. */
-  node: Page;
 };
 
 /** Information about pagination in a connection. */
@@ -2341,14 +2224,137 @@ export type PageInfo = {
   startCursor?: Maybe<Scalars['String']>;
 };
 
+/** Post recentes do profissional. */
+export type Post = Node & {
+  __typename?: 'Post';
+  /** Conteúdo do post. */
+  content: RichText;
+  /** The time the document was created */
+  createdAt: Scalars['DateTime'];
+  /** User that created this document */
+  createdBy?: Maybe<User>;
+  /** Get the document in other stages */
+  documentInStages: Array<Post>;
+  /** List of Post versions */
+  history: Array<Version>;
+  /** The unique identifier */
+  id: Scalars['ID'];
+  /** The time the document was published. Null on documents in draft stage. */
+  publishedAt?: Maybe<Scalars['DateTime']>;
+  /** User that last published this document */
+  publishedBy?: Maybe<User>;
+  scheduledIn: Array<ScheduledOperation>;
+  /** System stage field */
+  stage: Stage;
+  /** The time the document was updated */
+  updatedAt: Scalars['DateTime'];
+  /** User that last updated this document */
+  updatedBy?: Maybe<User>;
+  /** Url do post. */
+  url: Scalars['String'];
+};
+
+
+/** Post recentes do profissional. */
+export type PostCreatedByArgs = {
+  locales?: InputMaybe<Array<Locale>>;
+};
+
+
+/** Post recentes do profissional. */
+export type PostDocumentInStagesArgs = {
+  includeCurrent?: Scalars['Boolean'];
+  inheritLocale?: Scalars['Boolean'];
+  stages?: Array<Stage>;
+};
+
+
+/** Post recentes do profissional. */
+export type PostHistoryArgs = {
+  limit?: Scalars['Int'];
+  skip?: Scalars['Int'];
+  stageOverride?: InputMaybe<Stage>;
+};
+
+
+/** Post recentes do profissional. */
+export type PostPublishedByArgs = {
+  locales?: InputMaybe<Array<Locale>>;
+};
+
+
+/** Post recentes do profissional. */
+export type PostScheduledInArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locales?: InputMaybe<Array<Locale>>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<ScheduledOperationWhereInput>;
+};
+
+
+/** Post recentes do profissional. */
+export type PostUpdatedByArgs = {
+  locales?: InputMaybe<Array<Locale>>;
+};
+
+export type PostConnectInput = {
+  /** Allow to specify document position in list of connected documents, will default to appending at end of list */
+  position?: InputMaybe<ConnectPositionInput>;
+  /** Document to connect */
+  where: PostWhereUniqueInput;
+};
+
+/** A connection to a list of items. */
+export type PostConnection = {
+  __typename?: 'PostConnection';
+  aggregate: Aggregate;
+  /** A list of edges. */
+  edges: Array<PostEdge>;
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+};
+
+export type PostCreateInput = {
+  content: Scalars['RichTextAST'];
+  createdAt?: InputMaybe<Scalars['DateTime']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']>;
+  url: Scalars['String'];
+};
+
+export type PostCreateManyInlineInput = {
+  /** Connect multiple existing Post documents */
+  connect?: InputMaybe<Array<PostWhereUniqueInput>>;
+  /** Create and connect multiple existing Post documents */
+  create?: InputMaybe<Array<PostCreateInput>>;
+};
+
+export type PostCreateOneInlineInput = {
+  /** Connect one existing Post document */
+  connect?: InputMaybe<PostWhereUniqueInput>;
+  /** Create and connect one Post document */
+  create?: InputMaybe<PostCreateInput>;
+};
+
+/** An edge in a connection. */
+export type PostEdge = {
+  __typename?: 'PostEdge';
+  /** A cursor for use in pagination. */
+  cursor: Scalars['String'];
+  /** The item at the end of the edge. */
+  node: Post;
+};
+
 /** Identifies documents */
-export type PageManyWhereInput = {
+export type PostManyWhereInput = {
   /** Logical AND on all given filters. */
-  AND?: InputMaybe<Array<PageWhereInput>>;
+  AND?: InputMaybe<Array<PostWhereInput>>;
   /** Logical NOT on all given filters combined by AND. */
-  NOT?: InputMaybe<Array<PageWhereInput>>;
+  NOT?: InputMaybe<Array<PostWhereInput>>;
   /** Logical OR on all given filters. */
-  OR?: InputMaybe<Array<PageWhereInput>>;
+  OR?: InputMaybe<Array<PostWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
@@ -2421,9 +2427,28 @@ export type PageManyWhereInput = {
   /** All values that are not contained in given list. */
   updatedAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>;
   updatedBy?: InputMaybe<UserWhereInput>;
+  url?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  url_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  url_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  url_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  url_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  url_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  url_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  url_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  url_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  url_starts_with?: InputMaybe<Scalars['String']>;
 };
 
-export enum PageOrderByInput {
+export enum PostOrderByInput {
   CreatedAtAsc = 'createdAt_ASC',
   CreatedAtDesc = 'createdAt_DESC',
   IdAsc = 'id_ASC',
@@ -2431,87 +2456,89 @@ export enum PageOrderByInput {
   PublishedAtAsc = 'publishedAt_ASC',
   PublishedAtDesc = 'publishedAt_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
-  UpdatedAtDesc = 'updatedAt_DESC'
+  UpdatedAtDesc = 'updatedAt_DESC',
+  UrlAsc = 'url_ASC',
+  UrlDesc = 'url_DESC'
 }
 
-export type PageUpdateInput = {
-  /** No fields in update input */
-  _?: InputMaybe<Scalars['String']>;
+export type PostUpdateInput = {
+  content?: InputMaybe<Scalars['RichTextAST']>;
+  url?: InputMaybe<Scalars['String']>;
 };
 
-export type PageUpdateManyInlineInput = {
-  /** Connect multiple existing Page documents */
-  connect?: InputMaybe<Array<PageConnectInput>>;
-  /** Create and connect multiple Page documents */
-  create?: InputMaybe<Array<PageCreateInput>>;
-  /** Delete multiple Page documents */
-  delete?: InputMaybe<Array<PageWhereUniqueInput>>;
-  /** Disconnect multiple Page documents */
-  disconnect?: InputMaybe<Array<PageWhereUniqueInput>>;
-  /** Override currently-connected documents with multiple existing Page documents */
-  set?: InputMaybe<Array<PageWhereUniqueInput>>;
-  /** Update multiple Page documents */
-  update?: InputMaybe<Array<PageUpdateWithNestedWhereUniqueInput>>;
-  /** Upsert multiple Page documents */
-  upsert?: InputMaybe<Array<PageUpsertWithNestedWhereUniqueInput>>;
+export type PostUpdateManyInlineInput = {
+  /** Connect multiple existing Post documents */
+  connect?: InputMaybe<Array<PostConnectInput>>;
+  /** Create and connect multiple Post documents */
+  create?: InputMaybe<Array<PostCreateInput>>;
+  /** Delete multiple Post documents */
+  delete?: InputMaybe<Array<PostWhereUniqueInput>>;
+  /** Disconnect multiple Post documents */
+  disconnect?: InputMaybe<Array<PostWhereUniqueInput>>;
+  /** Override currently-connected documents with multiple existing Post documents */
+  set?: InputMaybe<Array<PostWhereUniqueInput>>;
+  /** Update multiple Post documents */
+  update?: InputMaybe<Array<PostUpdateWithNestedWhereUniqueInput>>;
+  /** Upsert multiple Post documents */
+  upsert?: InputMaybe<Array<PostUpsertWithNestedWhereUniqueInput>>;
 };
 
-export type PageUpdateManyInput = {
-  /** No fields in updateMany data input */
-  _?: InputMaybe<Scalars['String']>;
+export type PostUpdateManyInput = {
+  content?: InputMaybe<Scalars['RichTextAST']>;
+  url?: InputMaybe<Scalars['String']>;
 };
 
-export type PageUpdateManyWithNestedWhereInput = {
+export type PostUpdateManyWithNestedWhereInput = {
   /** Update many input */
-  data: PageUpdateManyInput;
+  data: PostUpdateManyInput;
   /** Document search */
-  where: PageWhereInput;
+  where: PostWhereInput;
 };
 
-export type PageUpdateOneInlineInput = {
-  /** Connect existing Page document */
-  connect?: InputMaybe<PageWhereUniqueInput>;
-  /** Create and connect one Page document */
-  create?: InputMaybe<PageCreateInput>;
-  /** Delete currently connected Page document */
+export type PostUpdateOneInlineInput = {
+  /** Connect existing Post document */
+  connect?: InputMaybe<PostWhereUniqueInput>;
+  /** Create and connect one Post document */
+  create?: InputMaybe<PostCreateInput>;
+  /** Delete currently connected Post document */
   delete?: InputMaybe<Scalars['Boolean']>;
-  /** Disconnect currently connected Page document */
+  /** Disconnect currently connected Post document */
   disconnect?: InputMaybe<Scalars['Boolean']>;
-  /** Update single Page document */
-  update?: InputMaybe<PageUpdateWithNestedWhereUniqueInput>;
-  /** Upsert single Page document */
-  upsert?: InputMaybe<PageUpsertWithNestedWhereUniqueInput>;
+  /** Update single Post document */
+  update?: InputMaybe<PostUpdateWithNestedWhereUniqueInput>;
+  /** Upsert single Post document */
+  upsert?: InputMaybe<PostUpsertWithNestedWhereUniqueInput>;
 };
 
-export type PageUpdateWithNestedWhereUniqueInput = {
+export type PostUpdateWithNestedWhereUniqueInput = {
   /** Document to update */
-  data: PageUpdateInput;
+  data: PostUpdateInput;
   /** Unique document search */
-  where: PageWhereUniqueInput;
+  where: PostWhereUniqueInput;
 };
 
-export type PageUpsertInput = {
+export type PostUpsertInput = {
   /** Create document if it didn't exist */
-  create: PageCreateInput;
+  create: PostCreateInput;
   /** Update document if it exists */
-  update: PageUpdateInput;
+  update: PostUpdateInput;
 };
 
-export type PageUpsertWithNestedWhereUniqueInput = {
+export type PostUpsertWithNestedWhereUniqueInput = {
   /** Upsert data */
-  data: PageUpsertInput;
+  data: PostUpsertInput;
   /** Unique document search */
-  where: PageWhereUniqueInput;
+  where: PostWhereUniqueInput;
 };
 
 /** Identifies documents */
-export type PageWhereInput = {
+export type PostWhereInput = {
   /** Logical AND on all given filters. */
-  AND?: InputMaybe<Array<PageWhereInput>>;
+  AND?: InputMaybe<Array<PostWhereInput>>;
   /** Logical NOT on all given filters combined by AND. */
-  NOT?: InputMaybe<Array<PageWhereInput>>;
+  NOT?: InputMaybe<Array<PostWhereInput>>;
   /** Logical OR on all given filters. */
-  OR?: InputMaybe<Array<PageWhereInput>>;
+  OR?: InputMaybe<Array<PostWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
@@ -2584,10 +2611,29 @@ export type PageWhereInput = {
   /** All values that are not contained in given list. */
   updatedAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>;
   updatedBy?: InputMaybe<UserWhereInput>;
+  url?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  url_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  url_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  url_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  url_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  url_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  url_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  url_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  url_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  url_starts_with?: InputMaybe<Scalars['String']>;
 };
 
-/** References Page record uniquely */
-export type PageWhereUniqueInput = {
+/** References Post record uniquely */
+export type PostWhereUniqueInput = {
   id?: InputMaybe<Scalars['ID']>;
 };
 
@@ -3238,14 +3284,14 @@ export type Query = {
   assetsConnection: AssetConnection;
   /** Fetches an object given its ID */
   node?: Maybe<Node>;
-  /** Retrieve a single page */
-  page?: Maybe<Page>;
+  /** Retrieve a single post */
+  post?: Maybe<Post>;
   /** Retrieve document version */
-  pageVersion?: Maybe<DocumentVersion>;
-  /** Retrieve multiple pages */
-  pages: Array<Page>;
-  /** Retrieve multiple pages using the Relay connection interface */
-  pagesConnection: PageConnection;
+  postVersion?: Maybe<DocumentVersion>;
+  /** Retrieve multiple posts */
+  posts: Array<Post>;
+  /** Retrieve multiple posts using the Relay connection interface */
+  postsConnection: PostConnection;
   /** Retrieve a single profile */
   profile?: Maybe<Profile>;
   /** Retrieve document version */
@@ -3320,41 +3366,41 @@ export type QueryNodeArgs = {
 };
 
 
-export type QueryPageArgs = {
+export type QueryPostArgs = {
   locales?: Array<Locale>;
   stage?: Stage;
-  where: PageWhereUniqueInput;
+  where: PostWhereUniqueInput;
 };
 
 
-export type QueryPageVersionArgs = {
+export type QueryPostVersionArgs = {
   where: VersionWhereInput;
 };
 
 
-export type QueryPagesArgs = {
+export type QueryPostsArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
   locales?: Array<Locale>;
-  orderBy?: InputMaybe<PageOrderByInput>;
+  orderBy?: InputMaybe<PostOrderByInput>;
   skip?: InputMaybe<Scalars['Int']>;
   stage?: Stage;
-  where?: InputMaybe<PageWhereInput>;
+  where?: InputMaybe<PostWhereInput>;
 };
 
 
-export type QueryPagesConnectionArgs = {
+export type QueryPostsConnectionArgs = {
   after?: InputMaybe<Scalars['String']>;
   before?: InputMaybe<Scalars['String']>;
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
   locales?: Array<Locale>;
-  orderBy?: InputMaybe<PageOrderByInput>;
+  orderBy?: InputMaybe<PostOrderByInput>;
   skip?: InputMaybe<Scalars['Int']>;
   stage?: Stage;
-  where?: InputMaybe<PageWhereInput>;
+  where?: InputMaybe<PostWhereInput>;
 };
 
 
@@ -3601,7 +3647,7 @@ export type ScheduledOperationUpdatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
 
-export type ScheduledOperationAffectedDocument = Asset | Page | Profile;
+export type ScheduledOperationAffectedDocument = Asset | Post | Profile;
 
 export type ScheduledOperationConnectInput = {
   /** Allow to specify document position in list of connected documents, will default to appending at end of list */
@@ -4991,12 +5037,54 @@ export enum _SystemDateTimeFieldVariation {
   Localization = 'localization'
 }
 
+export type PostsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type PostsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', url: string, content: { __typename?: 'RichText', html: string } }> };
+
 export type ProfileQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type ProfileQuery = { __typename?: 'Query', profile?: { __typename?: 'Profile', name: string, bio: string, skills: Array<string>, office: string, contact: Array<{ __typename?: 'Contact', link: string, name: string, image: { __typename?: 'Asset', url: string } }>, photo?: { __typename?: 'Asset', url: string } | null, education: Array<{ __typename?: 'Education', institution: string, startDate: any, endDate: any, studyArea: string }> } | null };
 
 
+export const PostsDocument = gql`
+    query Posts {
+  posts(orderBy: publishedAt_DESC) {
+    content {
+      html
+    }
+    url
+  }
+}
+    `;
+
+/**
+ * __usePostsQuery__
+ *
+ * To run a query within a React component, call `usePostsQuery` and pass it any options that fit your needs.
+ * When your component renders, `usePostsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = usePostsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function usePostsQuery(baseOptions?: Apollo.QueryHookOptions<PostsQuery, PostsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<PostsQuery, PostsQueryVariables>(PostsDocument, options);
+      }
+export function usePostsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<PostsQuery, PostsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<PostsQuery, PostsQueryVariables>(PostsDocument, options);
+        }
+export type PostsQueryHookResult = ReturnType<typeof usePostsQuery>;
+export type PostsLazyQueryHookResult = ReturnType<typeof usePostsLazyQuery>;
+export type PostsQueryResult = Apollo.QueryResult<PostsQuery, PostsQueryVariables>;
 export const ProfileDocument = gql`
     query Profile {
   profile(where: {slug: "profile"}) {

@@ -1,0 +1,8 @@
+query Posts {
+  posts(orderBy: publishedAt_DESC) {
+    content {
+      html
+    }
+    url
+  }
+}

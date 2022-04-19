@@ -1,4 +1,4 @@
 .container {
-  display: grid;
-  gap: 3rem;
+  display: flex;
+  flex-direction: column;
 }
