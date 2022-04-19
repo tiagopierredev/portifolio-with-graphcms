@@ -14,5 +14,11 @@ query Profile {
     photo {
       url
     }
+    education {
+      institution
+      startDate
+      endDate
+      studyArea
+    }
   }
 }

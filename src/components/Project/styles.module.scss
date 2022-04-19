@@ -1,0 +1,41 @@
+.container {
+  h3 {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    img {
+      margin-right: 1.6rem;
+    }
+  }
+  p {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    margin-top: 2rem;
+    height: 4rem;
+    overflow: hidden;
+    text-overflow: "...";
+  }
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2.7rem;
+  p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 0.8rem;
+    }
+  }
+  div {
+    display: flex;
+    align-items: center;
+    p {
+      margin-right: 1.6rem;
+    }
+  }
+}

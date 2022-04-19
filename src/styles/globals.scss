@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: "Merriweather Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   background-color: var(--background-app);
@@ -41,4 +41,7 @@ a:hover {
 
 ul {
   list-style: none;
+}
+.share-update-card {
+  background-color: #000;
 }
