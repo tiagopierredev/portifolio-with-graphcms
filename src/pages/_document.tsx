@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 export default class MyDocument extends Document {
   render() {
@@ -11,13 +11,12 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;700&display=swap"
             rel="stylesheet"
           />
-          <title>Portifólio - Tiago Pierre</title>
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }

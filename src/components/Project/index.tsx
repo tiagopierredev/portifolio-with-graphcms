@@ -1,42 +1,46 @@
-import { Box } from "../Box";
-import styles from "./styles.module.scss";
+import Image from 'next/image'
+import Link from 'next/link'
+import { Box } from '../Box'
+import styles from './styles.module.scss'
 
 interface ProjectProps {
   repository: {
-    name: string;
-    description: string;
-    forks_count: number;
-    language: string;
-    stargazers_count: number;
-    html_url: string;
-  };
+    name: string
+    description: string
+    forks_count: number
+    language: string
+    stargazers_count: number
+    html_url: string
+  }
 }
 
 export function Project({ repository }: ProjectProps) {
   return (
-    <a href={repository.html_url} target="_blank">
-      <li className={styles.container}>
-        <Box>
-          <h3>
-            <img src="./paste.svg" />
-            {repository.name}
-          </h3>
-          <p>{repository.description}</p>
-          <div className={styles.footer}>
-            <div>
-              <p>
-                <img src="./star.svg" alt="" />
-                {repository.stargazers_count}
-              </p>
-              <p>
-                <img src="./git-branch.svg" alt="" />
-                {repository.forks_count}
-              </p>
+    <Link href={repository.html_url} passHref>
+      <a target="_blank">
+        <li className={styles.container}>
+          <Box>
+            <h3>
+              <Image src="./paste.svg" alt={repository.name} />
+              {repository.name}
+            </h3>
+            <p>{repository.description}</p>
+            <div className={styles.footer}>
+              <div>
+                <p>
+                  <Image src="./star.svg" alt="star count" />
+                  {repository.stargazers_count}
+                </p>
+                <p>
+                  <Image src="./git-branch.svg" alt="git forker" />
+                  {repository.forks_count}
+                </p>
+              </div>
+              <p>{repository.language}</p>
             </div>
-            <p>{repository.language}</p>
-          </div>
-        </Box>
-      </li>
-    </a>
-  );
+          </Box>
+        </li>
+      </a>
+    </Link>
+  )
 }
