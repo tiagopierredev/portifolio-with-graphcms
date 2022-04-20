@@ -1,8 +1,9 @@
-query Posts {
-  posts(orderBy: publishedAt_DESC) {
+query Posts($first: Int, $orderBy: PostOrderByInput, $after: String) {
+  posts(first: $first, orderBy: $orderBy, after: $after) {
+    url
     content {
       html
     }
-    url
+    id
   }
 }

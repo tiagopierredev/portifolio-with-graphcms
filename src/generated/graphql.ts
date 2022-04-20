@@ -2660,6 +2660,8 @@ export type Profile = Node & {
   name: Scalars['String'];
   /** Cargo atual do profissional. */
   office: Scalars['String'];
+  /** Quantos posts por página o profissional quer mostrar. */
+  pagination: Scalars['Int'];
   /** Photo do profissional. */
   photo?: Maybe<Asset>;
   /** The time the document was published. Null on documents in draft stage. */
@@ -2781,6 +2783,7 @@ export type ProfileCreateInput = {
   education?: InputMaybe<EducationCreateManyInlineInput>;
   name: Scalars['String'];
   office: Scalars['String'];
+  pagination: Scalars['Int'];
   photo?: InputMaybe<AssetCreateOneInlineInput>;
   skills: Array<Scalars['String']>;
   slug?: InputMaybe<Scalars['String']>;
@@ -2918,6 +2921,21 @@ export type ProfileManyWhereInput = {
   office_not_starts_with?: InputMaybe<Scalars['String']>;
   /** All values starting with the given string. */
   office_starts_with?: InputMaybe<Scalars['String']>;
+  pagination?: InputMaybe<Scalars['Int']>;
+  /** All values greater than the given value. */
+  pagination_gt?: InputMaybe<Scalars['Int']>;
+  /** All values greater than or equal the given value. */
+  pagination_gte?: InputMaybe<Scalars['Int']>;
+  /** All values that are contained in given list. */
+  pagination_in?: InputMaybe<Array<Scalars['Int']>>;
+  /** All values less than the given value. */
+  pagination_lt?: InputMaybe<Scalars['Int']>;
+  /** All values less than or equal the given value. */
+  pagination_lte?: InputMaybe<Scalars['Int']>;
+  /** All values that are not equal to given value. */
+  pagination_not?: InputMaybe<Scalars['Int']>;
+  /** All values that are not contained in given list. */
+  pagination_not_in?: InputMaybe<Array<Scalars['Int']>>;
   photo?: InputMaybe<AssetWhereInput>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
@@ -2996,6 +3014,8 @@ export enum ProfileOrderByInput {
   NameDesc = 'name_DESC',
   OfficeAsc = 'office_ASC',
   OfficeDesc = 'office_DESC',
+  PaginationAsc = 'pagination_ASC',
+  PaginationDesc = 'pagination_DESC',
   PublishedAtAsc = 'publishedAt_ASC',
   PublishedAtDesc = 'publishedAt_DESC',
   SkillsAsc = 'skills_ASC',
@@ -3012,6 +3032,7 @@ export type ProfileUpdateInput = {
   education?: InputMaybe<EducationUpdateManyInlineInput>;
   name?: InputMaybe<Scalars['String']>;
   office?: InputMaybe<Scalars['String']>;
+  pagination?: InputMaybe<Scalars['Int']>;
   photo?: InputMaybe<AssetUpdateOneInlineInput>;
   skills?: InputMaybe<Array<Scalars['String']>>;
   slug?: InputMaybe<Scalars['String']>;
@@ -3038,6 +3059,7 @@ export type ProfileUpdateManyInput = {
   bio?: InputMaybe<Scalars['String']>;
   name?: InputMaybe<Scalars['String']>;
   office?: InputMaybe<Scalars['String']>;
+  pagination?: InputMaybe<Scalars['Int']>;
   skills?: InputMaybe<Array<Scalars['String']>>;
 };
 
@@ -3192,6 +3214,21 @@ export type ProfileWhereInput = {
   office_not_starts_with?: InputMaybe<Scalars['String']>;
   /** All values starting with the given string. */
   office_starts_with?: InputMaybe<Scalars['String']>;
+  pagination?: InputMaybe<Scalars['Int']>;
+  /** All values greater than the given value. */
+  pagination_gt?: InputMaybe<Scalars['Int']>;
+  /** All values greater than or equal the given value. */
+  pagination_gte?: InputMaybe<Scalars['Int']>;
+  /** All values that are contained in given list. */
+  pagination_in?: InputMaybe<Array<Scalars['Int']>>;
+  /** All values less than the given value. */
+  pagination_lt?: InputMaybe<Scalars['Int']>;
+  /** All values less than or equal the given value. */
+  pagination_lte?: InputMaybe<Scalars['Int']>;
+  /** All values that are not equal to given value. */
+  pagination_not?: InputMaybe<Scalars['Int']>;
+  /** All values that are not contained in given list. */
+  pagination_not_in?: InputMaybe<Array<Scalars['Int']>>;
   photo?: InputMaybe<AssetWhereInput>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
@@ -5037,24 +5074,29 @@ export enum _SystemDateTimeFieldVariation {
   Localization = 'localization'
 }
 
-export type PostsQueryVariables = Exact<{ [key: string]: never; }>;
+export type PostsQueryVariables = Exact<{
+  first?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<PostOrderByInput>;
+  after?: InputMaybe<Scalars['String']>;
+}>;
 
 
-export type PostsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', url: string, content: { __typename?: 'RichText', html: string } }> };
+export type PostsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', url: string, id: string, content: { __typename?: 'RichText', html: string } }> };
 
 export type ProfileQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ProfileQuery = { __typename?: 'Query', profile?: { __typename?: 'Profile', name: string, bio: string, skills: Array<string>, office: string, contact: Array<{ __typename?: 'Contact', link: string, name: string, image: { __typename?: 'Asset', url: string } }>, photo?: { __typename?: 'Asset', url: string } | null, education: Array<{ __typename?: 'Education', institution: string, startDate: any, endDate: any, studyArea: string }> } | null };
+export type ProfileQuery = { __typename?: 'Query', profile?: { __typename?: 'Profile', name: string, bio: string, skills: Array<string>, office: string, pagination: number, contact: Array<{ __typename?: 'Contact', link: string, name: string, image: { __typename?: 'Asset', url: string } }>, photo?: { __typename?: 'Asset', url: string } | null, education: Array<{ __typename?: 'Education', institution: string, startDate: any, endDate: any, studyArea: string }> } | null };
 
 
 export const PostsDocument = gql`
-    query Posts {
-  posts(orderBy: publishedAt_DESC) {
+    query Posts($first: Int, $orderBy: PostOrderByInput, $after: String) {
+  posts(first: $first, orderBy: $orderBy, after: $after) {
+    url
     content {
       html
     }
-    url
+    id
   }
 }
     `;
@@ -5071,6 +5113,9 @@ export const PostsDocument = gql`
  * @example
  * const { data, loading, error } = usePostsQuery({
  *   variables: {
+ *      first: // value for 'first'
+ *      orderBy: // value for 'orderBy'
+ *      after: // value for 'after'
  *   },
  * });
  */
@@ -5092,6 +5137,7 @@ export const ProfileDocument = gql`
     bio
     skills
     office
+    pagination
     contact {
       link
       name

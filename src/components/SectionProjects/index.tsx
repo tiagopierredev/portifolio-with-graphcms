@@ -24,8 +24,8 @@ export function SectionProjects({ github }: SectionHomeProps) {
         urlName="Veja todos"
       />
       <ul className={styles.projects}>
-        {github.map((repo) => {
-          return <Project repository={repo} />;
+        {github.map((repo, indice) => {
+          return <Project key={indice} repository={repo} />;
         })}
       </ul>
     </section>

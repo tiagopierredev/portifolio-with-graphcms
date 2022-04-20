@@ -14,6 +14,16 @@
   img {
     width: 100%;
   }
+
+  button {
+    background-color: var(--background-skills);
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 .profile {
   display: flex;

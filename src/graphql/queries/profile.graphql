@@ -4,6 +4,7 @@ query Profile {
     bio
     skills
     office
+    pagination
     contact {
       link
       name
