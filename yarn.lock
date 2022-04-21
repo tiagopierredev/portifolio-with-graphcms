@@ -1149,6 +1149,11 @@
   resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
   integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
 
+"@types/scrollreveal@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@types/scrollreveal/-/scrollreveal-0.0.7.tgz#cca18ca13093fc0c9b5ba6defed7374e6189196a"
+  integrity sha512-Bv/cBFpJE+WTUOViqT7y29n7Vpp+KAGF/UUx4DZx7JwAfHarBl/xGytum1+xMZBRjANcHHfDM9+7LQGilEj2gQ==
+
 "@types/ws@^8.0.0":
   version "8.5.3"
   resolved "https://registry.yarnpkg.com/@types/ws/-/ws-8.5.3.tgz#7d25a1ffbecd3c4f2d35068d0b283c037003274d"
@@ -2910,6 +2915,18 @@ is-date-object@^1.0.1:
   dependencies:
     has-tostringtag "^1.0.0"
 
+is-dom-node-list@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/is-dom-node-list/-/is-dom-node-list-1.2.1.tgz#141ded0c66de759d0976800d21370bb908f2950f"
+  integrity sha512-P1H071iT5TGG8pAHslhrLDo/tQLYc8tGuWABVqhGU4l2mm7aDNb9cx2myQ2AujEQO6B2cAujcW4a0/+6UfXInw==
+  dependencies:
+    is-dom-node "^1.0.4"
+
+is-dom-node@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/is-dom-node/-/is-dom-node-1.0.4.tgz#abb18af7133f1e687610cfeb274da1ced342f1c5"
+  integrity sha512-NEnTHKCeyGJTL0cKdzATF8SWzyTMYf5CbNKWBvsXvyMxZG32g+a09qkeCbrfQNLTD85CbPeHb4YjIJCjyzF0yA==
+
 is-extglob@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/is-extglob/-/is-extglob-2.1.1.tgz#a88c02535791f02ed37c76a1b9ea9773c833f8c2"
@@ -3464,6 +3481,11 @@ minimist@^1.2.0, minimist@^1.2.6:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
   integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
+miniraf@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/miniraf/-/miniraf-1.0.0.tgz#5d88e108bbdcb55b4a2ff3da337f24a13a3377e1"
+  integrity sha512-XpvhtJYzVrpXe+JoAthrT9E40NIrSDDMcdHEYL2M+lR/OCas0nadetcBBq/MWYqlgV5aDWVQ3mfAqd+fG6Y/EQ==
+
 mkdirp@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
@@ -3893,7 +3915,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.7.2, prop-types@^15.8.1:
+prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -3942,13 +3964,6 @@ react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
-
-react-reveal@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/react-reveal/-/react-reveal-1.2.2.tgz#f47fbc44debc4c185ae2163a215a9e822c7adfef"
-  integrity sha512-JCv3fAoU6Z+Lcd8U48bwzm4pMZ79qsedSXYwpwt6lJNtj/v5nKJYZZbw3yhaQPPgYePo3Y0NOCoYOq/jcsisuw==
-  dependencies:
-    prop-types "^15.5.10"
 
 react@18.0.0:
   version "18.0.0"
@@ -4037,6 +4052,11 @@ relay-runtime@12.0.0:
     "@babel/runtime" "^7.0.0"
     fbjs "^3.0.0"
     invariant "^2.2.4"
+
+rematrix@0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/rematrix/-/rematrix-0.3.0.tgz#4f3f9156aa80ded8a8ca23785f48c6012b6dea4a"
+  integrity sha512-xB/9ZvJIKaDgXX0qkvV9/pLD8zK23A6TVV6F8Vhsl+SrxbBeVYutz5uszxgC6Rt3RP9LZiH8OXaYjr+x6WXWmQ==
 
 remedial@^1.0.7:
   version "1.0.8"
@@ -4186,6 +4206,15 @@ scheduler@^0.21.0:
   integrity sha512-1r87x5fz9MXqswA2ERLo0EbOAU74DpIUO090gIasYTqlVoJeMcl+Z1Rg7WHz+qtPujhS/hGIt9kxZOYBV3faRQ==
   dependencies:
     loose-envify "^1.1.0"
+
+scrollreveal@^4.0.9:
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/scrollreveal/-/scrollreveal-4.0.9.tgz#47866e1967ff604e64bac28818fe0dcea44f2c8b"
+  integrity sha512-fefGvzVS8YbXbDK1+T0kvy2yqxaiBJZeGUhPeqajf+7sGqtX4xikbKGAlzQuPCpswAMswx94ZwhDjXKnRIqW1w==
+  dependencies:
+    miniraf "1.0.0"
+    rematrix "0.3.0"
+    tealight "0.3.6"
 
 scuid@^1.1.0:
   version "1.1.0"
@@ -4464,6 +4493,14 @@ sync-fetch@0.3.1, sync-fetch@^0.3.1:
   dependencies:
     buffer "^5.7.0"
     node-fetch "^2.6.1"
+
+tealight@0.3.6:
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/tealight/-/tealight-0.3.6.tgz#14c8071ce3c188972a5cb7d8a5668ca2820b4292"
+  integrity sha512-Dys3N8jFBThD9pNVpPCyUiu6DfWcTBdqWQJIvnAuVaFkGEdrPBJ43070vVbn6sTlLvn2IQK2zFW4FrVIrTo8eQ==
+  dependencies:
+    is-dom-node "^1.0.4"
+    is-dom-node-list "^1.2.1"
 
 text-table@^0.2.0:
   version "0.2.0"

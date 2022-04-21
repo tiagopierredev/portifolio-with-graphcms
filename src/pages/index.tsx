@@ -10,8 +10,6 @@ import { Education } from '../components/Education'
 import { SectionProjects } from '../components/SectionProjects'
 import { Posts } from '../components/Posts'
 
-import Fade from 'react-reveal/Fade'
-
 import {
   Post,
   PostOrderByInput,
@@ -57,7 +55,9 @@ export default function Home({ profile, github, posts }: HomeProps) {
         after: allPosts[lastpost - 1].id
       }
     })
-    setAllPost([...allPosts, ...data.posts])
+    setTimeout(() => {
+      setAllPost([...allPosts, ...data.posts])
+    }, 500)
   }
 
   useEffect(() => {
@@ -73,50 +73,40 @@ export default function Home({ profile, github, posts }: HomeProps) {
   return (
     <>
       <Head>
-        <title>Tiago Pierre</title>
+        <title>{profile.name}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta property="og:title" content="Tiago Pierre" />
+        <meta property="og:title" content={`${profile.name}`} />
         <meta property="og:type" content="blog" />
         <meta property="og:image" content={`${profile.photo?.url}`} />
         <meta property="pg:url" content="bio.tiagopierre.tech" />
-        <meta
-          property="og:description"
-          content="Meu nome é Tiago Pierre, sou estudante de programação desde 2018, ano em que iniciei o curso de Técnico em Informática para Internet (Instituto Federal do Maranhão, concluído). Sou apaixonado pelo o ecossistema JavaScript, o qual me tornei desenvolvedor Front-End certificado pela Rocketseat."
-        />
-        <meta
-          name="description"
-          content="Meu nome é Tiago Pierre, sou estudante de programação desde 2018, ano em que iniciei o curso de Técnico em Informática para Internet (Instituto Federal do Maranhão, concluído). Sou apaixonado pelo o ecossistema JavaScript, o qual me tornei desenvolvedor Front-End certificado pela Rocketseat."
-        />
+        <meta property="og:description" content={`${profile.bio}`} />
+        <meta name="description" content={`${profile.bio}`} />
       </Head>
+
       <main className={styles.container}>
         <AsideBar>
-          <Fade>
-            <Profile
-              name={profile?.name}
-              office={profile?.office}
-              photo={profile?.photo?.url}
-            />
-          </Fade>
-          <Fade>
-            <Links contacts={profile?.contact} />
-          </Fade>
-          <Fade>
-            <Technologies skills={profile?.skills} />
-          </Fade>
-          <Fade>
-            <Education educations={profile?.education} />
-          </Fade>
+          <Profile
+            name={profile?.name}
+            office={profile?.office}
+            photo={profile?.photo?.url}
+          />
+
+          <Links contacts={profile?.contact} />
+
+          <Technologies skills={profile?.skills} />
+
+          <Education educations={profile?.education} />
         </AsideBar>
 
         <div className={styles.home}>
-          <Fade>
-            <SectionProjects github={github} />
-          </Fade>
+          <SectionProjects github={github} />
+
           <Posts posts={allPosts} profile={profile} nextPosts={nextPosts} />
         </div>
 
         {!!scrollY && <BackToTop />}
       </main>
+
       <footer className={styles.footer}>Feito com 💜 por Tiago Pierre</footer>
     </>
   )

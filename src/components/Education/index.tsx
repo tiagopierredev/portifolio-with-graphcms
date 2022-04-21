@@ -1,19 +1,19 @@
-import { Education } from "../../generated/graphql";
-import { Box } from "../Box";
-import styles from "./styles.module.scss";
+import { Education } from '../../generated/graphql'
+import { Box } from '../Box'
+import styles from './styles.module.scss'
 
 interface EducationProps {
-  educations?: Education[];
+  educations?: Education[]
 }
 
 export function Education({ educations }: EducationProps) {
-  const educationsFormatted = educations?.map((education) => {
+  const educationsFormatted = educations?.map(education => {
     return {
       ...education,
       startDate: new Date(education.startDate).getFullYear() + 1,
-      endDate: new Date(education.endDate).getFullYear(),
-    };
-  });
+      endDate: new Date(education.endDate).getFullYear()
+    }
+  })
 
   return (
     <Box>
@@ -28,9 +28,9 @@ export function Education({ educations }: EducationProps) {
               </p>
               <p>{education.studyArea}</p>
             </li>
-          );
+          )
         })}
       </ul>
     </Box>
-  );
+  )
 }

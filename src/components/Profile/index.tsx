@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Box } from '../Box'
+
 import styles from './styles.module.scss'
 
 interface ProfileProps {

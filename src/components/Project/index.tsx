@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Box } from '../Box'
+
 import styles from './styles.module.scss'
 
 interface ProjectProps {
