@@ -61,6 +61,14 @@ export default function Home({ profile, github, posts }: HomeProps) {
       <Head>
         <title>Tiago Pierre</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta property="og:title" content="Tiago Pierre" />
+        <meta property="og:type" content="blog" />
+        <meta property="og:image" content={`${profile.photo?.url}`} />
+        <meta property="pg:url" content="bio.tiagopierre.tech" />
+        <meta
+          property="og:description"
+          content="Meu nome é Tiago Pierre, sou estudante de programação desde 2018, ano em que iniciei o curso de Técnico em Informática para Internet (Instituto Federal do Maranhão, concluído). Sou apaixonado pelo o ecossistema JavaScript, o qual me tornei desenvolvedor Front-End certificado pela Rocketseat."
+        />
         <meta
           name="description"
           content="Meu nome é Tiago Pierre, sou estudante de programação desde 2018, ano em que iniciei o curso de Técnico em Informática para Internet (Instituto Federal do Maranhão, concluído). Sou apaixonado pelo o ecossistema JavaScript, o qual me tornei desenvolvedor Front-End certificado pela Rocketseat."
