@@ -1,34 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">🌄 UpFi</h1>
+<p align="center">Aplicação desenvolvida durante as aulas do Ignite Rockteseat. 🚀</p>
 
-## Getting Started
+<p align="center">
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/tiagopierre/DashGo/edit/main/README.md#%EF%B8%8F-como-rodar-a-aplica%C3%A7%C3%A3o">Rodar Aplicação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/tiagopierre/DashGo/edit/main/README.md#-bibliotecas">Bibliotecas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/tiagopierre/DashGo/edit/main/README.md#-licen%C3%A7a">Licença</a>
+</p>
 
-First, run the development server:
+
+<img src="https://github.com/tiagopierre/reactjs-upload-de-imagens/blob/main/screencapture/screencapture-localhost-3000-2022-03-30-10_48_26.png?raw=true" alt="screenshot"/>
+
+
+
+## 💻 Projeto
+
+Aplicação que permite o upload de imagens em determinados formatos (PNG, JPEG e GIF) e ainda incluindo nome e descrição para elas.
+> Status do Projeto: :heavy_check_mark: (_concluído_)
+
+
+## 🚀 Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- NextJs
+- TypeScript
+- HTML
+- CSS
+
+## ▶️ Como rodar a aplicação 
+
+Antes de começar :checkered_flag:, você precisa ter [Git](https://git-scm.com) e [Node](https://nodejs.org/en/) instalados.
 
 ```bash
-npm run dev
-# or
-yarn dev
+# Clonar este projeto
+$ git clone https://github.com/tiagopierre/reactjs-upload-de-imagens.git
+
+# Acessar a pasta
+$ cd reactjs-upload-de-imagens
+
+# Instalar as dependências 
+$ yarn
+
+# Rodar o projeto
+$ yarn dev
+
+# O servidor irá inicializar no <http://localhost:3000>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 👨🏻‍💻 Deploy da Aplicação
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<img src="https://github.com/tiagopierre/reactjs-upload-de-imagens/blob/main/screencapture/Grava%C3%A7%C3%A3o%20de%20Tela%202022-03-30%20%C3%A0s%2010.44.46.gif?raw=true" alt="screenshot"/>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 📁 Bibliotecas
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- [ChakraUi](https://chakra-ui.com/)
+- [Axios](https://axios-http.com/) 
+- [ReactQuery](https://react-query.tanstack.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- [FaunDb](https://fauna.com/)
+- [ImgBB](https://pt-br.imgbb.com/)
 
-## Learn More
+## 📝 Licença
 
-To learn more about Next.js, take a look at the following resources:
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](.github/LICENSE.md) para mais detalhes.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Made with
+💜 by <a href="https://github.com/tiagopierre" target="_blank">Tiago Pierre</a>
