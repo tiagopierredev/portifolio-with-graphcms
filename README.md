@@ -1,22 +1,22 @@
-<h1 align="center">🌄 UpFi</h1>
-<p align="center">Aplicação desenvolvida durante as aulas do Ignite Rockteseat. 🚀</p>
+<h1 align="center">🌐 Portfolio (Bio)</h1>
+<p align="center">Aplicação JamStack desenvolvida com NextJs integrado ao GraphCms. 🚀</p>
 
 <p align="center">
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/tiagopierre/DashGo/edit/main/README.md#%EF%B8%8F-como-rodar-a-aplica%C3%A7%C3%A3o">Rodar Aplicação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/tiagopierre/DashGo/edit/main/README.md#-bibliotecas">Bibliotecas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/tiagopierre/DashGo/edit/main/README.md#-licen%C3%A7a">Licença</a>
+  <a href="#️-como-rodar-a-aplicação">Rodar Aplicação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-deploy-da-aplicação">Bibliotecas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-licença">Licença</a>
 </p>
 
 
-<img src="https://github.com/tiagopierre/reactjs-upload-de-imagens/blob/main/screencapture/screencapture-localhost-3000-2022-03-30-10_48_26.png?raw=true" alt="screenshot"/>
+<img src="https://github.com/tiagopierre/portifolio-with-graphcms/blob/main/screen/DD%20_%20Portfolio%20(Copy).png?raw=true" alt="screenshot"/>
 
 
 
 ## 💻 Projeto
 
-Aplicação que permite o upload de imagens em determinados formatos (PNG, JPEG e GIF) e ainda incluindo nome e descrição para elas.
+Esta é uma aplicação JamStack desenvolvida com NextJs integrado com GraphCms.
 > Status do Projeto: :heavy_check_mark: (_concluído_)
 
 
@@ -26,6 +26,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - NextJs
 - TypeScript
+- Graphql
 - HTML
 - CSS
 
@@ -35,10 +36,10 @@ Antes de começar :checkered_flag:, você precisa ter [Git](https://git-scm.com)
 
 ```bash
 # Clonar este projeto
-$ git clone https://github.com/tiagopierre/reactjs-upload-de-imagens.git
+$ git clone https://github.com/tiagopierre/portifolio-with-graphcms.git
 
 # Acessar a pasta
-$ cd reactjs-upload-de-imagens
+$ cd portifolio-with-graphcms
 
 # Instalar as dependências 
 $ yarn
