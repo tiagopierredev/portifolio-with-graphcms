@@ -43,15 +43,17 @@ export default function Home({ profile, github, posts }: HomeProps) {
   const [allPosts, setAllPost] = useState<Post[]>(posts)
 
   async function nextPosts() {
+    const lastpost = allPosts.length
+
     const { data } = await client.query({
       query: PostsDocument,
       variables: {
         first: profile.pagination,
         orderBy: PostOrderByInput.PublishedAtDesc,
-        after: allPosts[2].id
+        after: allPosts[lastpost - 1].id
       }
     })
-    console.log(data.post)
+    setAllPost([...allPosts, ...data.posts])
   }
 
   return (

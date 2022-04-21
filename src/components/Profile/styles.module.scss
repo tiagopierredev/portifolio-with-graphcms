@@ -4,12 +4,7 @@
   align-items: center;
   justify-content: center;
   padding: 1.2rem 0rem 2.9rem;
-  img {
-    width: 12.8rem;
-    height: 12.8rem;
-    border: solid 2px var(--green);
-    border-radius: 50%;
-  }
+
   h1 {
     font-weight: 700;
     font-size: 2.3rem;
@@ -22,4 +17,9 @@
     line-height: 1.6rem;
     margin-top: 1rem;
   }
+}
+
+.photo {
+  border: solid 2px var(--green) !important;
+  border-radius: 50%;
 }

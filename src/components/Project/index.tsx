@@ -21,18 +21,34 @@ export function Project({ repository }: ProjectProps) {
         <li className={styles.container}>
           <Box>
             <h3>
-              <Image src="./paste.svg" alt={repository.name} />
+              <Image
+                src="/paste.svg"
+                alt={repository.name}
+                width={20}
+                height={20}
+                className={styles.past}
+              />
               {repository.name}
             </h3>
             <p>{repository.description}</p>
             <div className={styles.footer}>
               <div>
                 <p>
-                  <Image src="./star.svg" alt="star count" />
+                  <Image
+                    src="/star.svg"
+                    alt="star count"
+                    width={20}
+                    height={20}
+                  />
                   {repository.stargazers_count}
                 </p>
                 <p>
-                  <Image src="./git-branch.svg" alt="git forker" />
+                  <Image
+                    src="/git-branch.svg"
+                    alt="git forker"
+                    width={20}
+                    height={20}
+                  />
                   {repository.forks_count}
                 </p>
               </div>

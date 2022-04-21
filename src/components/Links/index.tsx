@@ -15,10 +15,16 @@ export function Links({ contacts }: LinksProps) {
         {contacts?.map((contact, indice) => {
           return (
             <li key={indice}>
-              <Link href={`${contact.link}`}>
-                <a target="_blank" rel="noreferrer">
-                  <Image src={contact.image.url} alt={contact.name} />
-                  {contact.name}
+              <Link href={contact.link}>
+                <a target="_blank">
+                  <Image
+                    src={contact.image.url}
+                    alt={contact.name}
+                    height={24}
+                    width={24}
+                    className={styles.imgLink}
+                  />
+                  <p>{contact.name}</p>
                 </a>
               </Link>
             </li>

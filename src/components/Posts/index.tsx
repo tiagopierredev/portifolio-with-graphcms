@@ -1,13 +1,11 @@
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import {
   Post,
   PostOrderByInput,
-  PostsDocument,
   Profile,
   usePostsQuery
 } from '../../generated/graphql'
-import client from '../../lib/apollo-client'
 import { Box } from '../Box'
 import { Divider } from '../Divider'
 import styles from './styles.module.scss'
@@ -20,6 +18,14 @@ interface PostsProps {
 
 export function Posts({ posts, profile, nextPosts }: PostsProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
+
+  const { data } = usePostsQuery({
+    variables: {
+      first: profile.pagination,
+      orderBy: PostOrderByInput.PublishedAtDesc,
+      after: posts[posts.length - 1].id
+    }
+  })
 
   useEffect(() => {
     const options = {
@@ -51,7 +57,7 @@ export function Posts({ posts, profile, nextPosts }: PostsProps) {
             <li key={indice}>
               <Box>
                 <div className={styles.profile}>
-                  <Image src={`${profile?.photo?.url}`} alt={profile?.name} />
+                  <img src={`${profile?.photo?.url}`} alt={profile?.name} />
                   <div>
                     <p>{profile?.name}</p>
                     <p>{profile?.office}</p>
@@ -65,13 +71,18 @@ export function Posts({ posts, profile, nextPosts }: PostsProps) {
           )
         })}
 
-        <div ref={scrollRef}></div>
-
-        {/* {data?.posts.length !== 0 ? (
-          <button onClick={nextPosts}>Carregar mais</button>
+        {data?.posts.length !== 0 ? (
+          <div ref={scrollRef} className={styles.scroll}>
+            <div className={styles['lds-ring']}>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
         ) : (
-          ""
-        )} */}
+          ''
+        )}
       </ul>
     </>
   )
