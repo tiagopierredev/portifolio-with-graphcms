@@ -54,7 +54,7 @@ $ yarn dev
 
 <img src="https://github.com/tiagopierre/portifolio-with-graphcms/blob/main/screen/Grava%C3%A7%C3%A3o%20de%20Tela%202022-04-21%20%C3%A0s%2015.09.33.gif?raw=true" alt="screenshot"/>
 
-🌐 [Deploy da aplicação ](https://axios-http.com/) 
+🌐 [Deploy da aplicação ](https://bio.tiagopierre.tech/) 
 
 ## 📁 Bibliotecas
 
