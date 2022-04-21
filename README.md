@@ -16,7 +16,7 @@
 
 ## 💻 Projeto
 
-Esta é uma aplicação JamStack desenvolvida com NextJs integrado com GraphCms.
+Esta é uma aplicação no formato Portfólio, que conta com informações pessoais, projetos do Github e Posts. Desenvolvida com NextJs integrado com GraphCms e api do Github.
 > Status do Projeto: :heavy_check_mark: (_concluído_)
 
 
@@ -52,16 +52,16 @@ $ yarn dev
 
 ## 👨🏻‍💻 Deploy da Aplicação
 
-<img src="https://github.com/tiagopierre/reactjs-upload-de-imagens/blob/main/screencapture/Grava%C3%A7%C3%A3o%20de%20Tela%202022-03-30%20%C3%A0s%2010.44.46.gif?raw=true" alt="screenshot"/>
+<img src="https://github.com/tiagopierre/portifolio-with-graphcms/blob/main/screen/Grava%C3%A7%C3%A3o%20de%20Tela%202022-04-21%20%C3%A0s%2015.09.33.gif?raw=true" alt="screenshot"/>
 
 ## 📁 Bibliotecas
 
-- [ChakraUi](https://chakra-ui.com/)
 - [Axios](https://axios-http.com/) 
-- [ReactQuery](https://react-query.tanstack.com/)
-- [React Hook Form](https://react-hook-form.com/)
-- [FaunDb](https://fauna.com/)
-- [ImgBB](https://pt-br.imgbb.com/)
+- [Codegen](https://www.graphql-code-generator.com/)
+- [Apollo Client](https://www.apollographql.com/docs/react/)
+- [Graphql](https://graphql.org/)
+- [sass](https://sass-lang.com/)
+
 
 ## 📝 Licença
 
