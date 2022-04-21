@@ -59,7 +59,12 @@ export default function Home({ profile, github, posts }: HomeProps) {
   return (
     <>
       <Head>
-        <title>My page title</title>
+        <title>Tiago Pierre</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="Meu nome é Tiago Pierre, sou estudante de programação desde 2018, ano em que iniciei o curso de Técnico em Informática para Internet (Instituto Federal do Maranhão, concluído). Sou apaixonado pelo o ecossistema JavaScript, o qual me tornei desenvolvedor Front-End certificado pela Rocketseat."
+        />
       </Head>
       <main className={styles.container}>
         <AsideBar>
