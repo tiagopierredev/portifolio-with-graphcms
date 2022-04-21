@@ -1,6 +1,5 @@
 import { Box } from '../Box'
 import styles from './styles.module.scss'
-import {} from '../../generated/graphql'
 
 interface TechnologiesProps {
   skills?: Array<string>

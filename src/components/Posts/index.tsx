@@ -1,13 +1,16 @@
-import Image from 'next/image'
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
+
 import {
   Post,
   PostOrderByInput,
   Profile,
   usePostsQuery
 } from '../../generated/graphql'
+
 import { Box } from '../Box'
 import { Divider } from '../Divider'
+
 import styles from './styles.module.scss'
 
 interface PostsProps {

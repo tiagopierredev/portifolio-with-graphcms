@@ -1,18 +1,19 @@
-import { Divider } from "../Divider";
-import { Project } from "../Project";
-import styles from "./styles.module.scss";
+import { Divider } from '../Divider'
+import { Project } from '../Project'
+
+import styles from './styles.module.scss'
 
 interface GitHubProps {
-  name: string;
-  description: string;
-  forks_count: number;
-  language: string;
-  stargazers_count: number;
-  html_url: string;
+  name: string
+  description: string
+  forks_count: number
+  language: string
+  stargazers_count: number
+  html_url: string
 }
 
 interface SectionHomeProps {
-  github: GitHubProps[];
+  github: GitHubProps[]
 }
 
 export function SectionProjects({ github }: SectionHomeProps) {
@@ -25,9 +26,9 @@ export function SectionProjects({ github }: SectionHomeProps) {
       />
       <ul className={styles.projects}>
         {github.map((repo, indice) => {
-          return <Project key={indice} repository={repo} />;
+          return <Project key={indice} repository={repo} />
         })}
       </ul>
     </section>
-  );
+  )
 }

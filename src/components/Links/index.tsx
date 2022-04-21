@@ -1,7 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
+
 import { Contact } from '../../generated/graphql'
 import { Box } from '../Box'
+
 import styles from './styles.module.scss'
 
 interface LinksProps {

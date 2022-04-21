@@ -9,6 +9,7 @@ import { Technologies } from '../components/Technologies'
 import { Education } from '../components/Education'
 import { SectionProjects } from '../components/SectionProjects'
 import { Posts } from '../components/Posts'
+import { BackToTop } from '../components/backToTop'
 
 import {
   Post,
@@ -22,7 +23,6 @@ import { api } from '../services/api'
 import client from '../lib/apollo-client'
 
 import styles from './Home.module.scss'
-import { BackToTop } from '../components/backToTop'
 
 interface GitHubProps {
   name: string
