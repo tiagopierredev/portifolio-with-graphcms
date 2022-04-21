@@ -17,3 +17,14 @@
   font-size: 1.4rem;
   line-height: 2rem;
 }
+
+@media only screen and (max-width: 862px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .home {
+    margin-left: 0rem;
+  }
+}

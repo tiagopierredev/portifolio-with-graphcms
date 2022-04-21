@@ -49,7 +49,7 @@ export function Posts({ posts, profile, nextPosts }: PostsProps) {
 
   return (
     <>
-      <Divider title="Recent Posts" />
+      <Divider title="Recent Posts" url="#" />
 
       <ul className={styles.container}>
         {posts?.map((post, indice) => {

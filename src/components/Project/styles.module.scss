@@ -5,6 +5,9 @@
     font-size: 1.6rem;
     font-weight: 700;
     gap: 1.6rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   p {
     font-size: 1.4rem;

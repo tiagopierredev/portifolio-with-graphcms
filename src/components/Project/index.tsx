@@ -20,16 +20,19 @@ export function Project({ repository }: ProjectProps) {
       <a target="_blank">
         <li className={styles.container}>
           <Box>
-            <h3>
-              <Image
-                src="/paste.svg"
-                alt={repository.name}
-                width={20}
-                height={20}
-                className={styles.past}
-              />
-              {repository.name}
-            </h3>
+            <div className={styles.title}>
+              <h3>
+                <Image
+                  src="/paste.svg"
+                  alt={repository.name}
+                  width={20}
+                  height={20}
+                  className={styles.past}
+                />
+                {repository.name}
+              </h3>
+            </div>
+
             <p>{repository.description}</p>
             <div className={styles.footer}>
               <div>
