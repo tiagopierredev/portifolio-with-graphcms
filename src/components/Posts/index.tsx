@@ -10,6 +10,8 @@ import { Box } from '../Box'
 import { Divider } from '../Divider'
 import styles from './styles.module.scss'
 
+import Fade from 'react-reveal/Fade'
+
 interface PostsProps {
   posts: Post[]
   profile: Profile
@@ -49,24 +51,33 @@ export function Posts({ posts, profile, nextPosts }: PostsProps) {
 
   return (
     <>
-      <Divider title="Recent Posts" url="#" />
-
+      <Fade>
+        <Divider title="Recent Posts" url="#" />
+      </Fade>
       <ul className={styles.container}>
         {posts?.map((post, indice) => {
           return (
             <li key={indice}>
-              <Box>
-                <div className={styles.profile}>
-                  <img src={`${profile?.photo?.url}`} alt={profile?.name} />
-                  <div>
-                    <p>{profile?.name}</p>
-                    <p>{profile?.office}</p>
+              <Fade>
+                <Box>
+                  <div className={styles.profile}>
+                    <Image
+                      className={styles.imgProfile}
+                      height={48}
+                      width={48}
+                      src={`${profile?.photo?.url}`}
+                      alt={profile?.name}
+                    />
+                    <div>
+                      <p>{profile?.name}</p>
+                      <p>{profile?.office}</p>
+                    </div>
                   </div>
-                </div>
-                <div
-                  dangerouslySetInnerHTML={{ __html: post.content.html }}
-                ></div>
-              </Box>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: post.content.html }}
+                  ></div>
+                </Box>
+              </Fade>
             </li>
           )
         })}

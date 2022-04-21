@@ -1,8 +1,16 @@
+import { useEffect, useState } from 'react'
 import { GetServerSideProps } from 'next'
+import Head from 'next/head'
+
 import { AsideBar } from '../components/AsideBar'
 import { Profile } from '../components/Profile'
+import { Links } from '../components/Links'
+import { Technologies } from '../components/Technologies'
+import { Education } from '../components/Education'
+import { SectionProjects } from '../components/SectionProjects'
+import { Posts } from '../components/Posts'
 
-import styles from './Home.module.scss'
+import Fade from 'react-reveal/Fade'
 
 import {
   Post,
@@ -12,17 +20,11 @@ import {
   ProfileDocument
 } from '../generated/graphql'
 
-import client from '../lib/apollo-client'
-import { Links } from '../components/Links'
-import { Technologies } from '../components/Technologies'
-
-import { Education } from '../components/Education'
-import { SectionProjects } from '../components/SectionProjects'
-
 import { api } from '../services/api'
-import { Posts } from '../components/Posts'
-import { useEffect, useState } from 'react'
-import Head from 'next/head'
+import client from '../lib/apollo-client'
+
+import styles from './Home.module.scss'
+import { BackToTop } from '../components/backToTop'
 
 interface GitHubProps {
   name: string
@@ -42,6 +44,8 @@ interface HomeProps {
 export default function Home({ profile, github, posts }: HomeProps) {
   const [allPosts, setAllPost] = useState<Post[]>(posts)
 
+  const [scrollY, SetScrollY] = useState(false)
+
   async function nextPosts() {
     const lastpost = allPosts.length
 
@@ -55,6 +59,16 @@ export default function Home({ profile, github, posts }: HomeProps) {
     })
     setAllPost([...allPosts, ...data.posts])
   }
+
+  useEffect(() => {
+    document.addEventListener('scroll', () => {
+      if (window.scrollY > 1000) {
+        SetScrollY(true)
+      } else {
+        SetScrollY(false)
+      }
+    })
+  })
 
   return (
     <>
@@ -76,19 +90,32 @@ export default function Home({ profile, github, posts }: HomeProps) {
       </Head>
       <main className={styles.container}>
         <AsideBar>
-          <Profile
-            name={profile?.name}
-            office={profile?.office}
-            photo={profile?.photo?.url}
-          />
-          <Links contacts={profile?.contact} />
-          <Technologies skills={profile?.skills} />
-          <Education educations={profile?.education} />
+          <Fade>
+            <Profile
+              name={profile?.name}
+              office={profile?.office}
+              photo={profile?.photo?.url}
+            />
+          </Fade>
+          <Fade>
+            <Links contacts={profile?.contact} />
+          </Fade>
+          <Fade>
+            <Technologies skills={profile?.skills} />
+          </Fade>
+          <Fade>
+            <Education educations={profile?.education} />
+          </Fade>
         </AsideBar>
+
         <div className={styles.home}>
-          <SectionProjects github={github} />
+          <Fade>
+            <SectionProjects github={github} />
+          </Fade>
           <Posts posts={allPosts} profile={profile} nextPosts={nextPosts} />
         </div>
+
+        {!!scrollY && <BackToTop />}
       </main>
       <footer className={styles.footer}>Feito com 💜 por Tiago Pierre</footer>
     </>
