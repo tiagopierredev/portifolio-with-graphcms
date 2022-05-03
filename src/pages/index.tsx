@@ -115,7 +115,7 @@ export default function Home({ profile, github, posts }: HomeProps) {
 export const getServerSideProps: GetServerSideProps = async () => {
   const { data } = await client.query({ query: ProfileDocument })
 
-  const response = await api.get('/tiagopierre/repos?per_page=2&sort=created')
+  const response = await api.get('/tiagopierre/repos?per_page=2&sort=pushed')
 
   const { data: posts } = await client.query({
     query: PostsDocument,
