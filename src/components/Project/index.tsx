@@ -1,19 +1,20 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from "next/image";
+import Link from "next/link";
 
-import { Box } from '../Box'
+import { Box } from "../Box";
+import { IconLanguages } from "../IconLanguages";
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss";
 
 interface ProjectProps {
   repository: {
-    name: string
-    description: string
-    forks_count: number
-    language: string
-    stargazers_count: number
-    html_url: string
-  }
+    name: string;
+    description: string;
+    forks_count: number;
+    language: string;
+    stargazers_count: number;
+    html_url: string;
+  };
 }
 
 export function Project({ repository }: ProjectProps) {
@@ -57,11 +58,14 @@ export function Project({ repository }: ProjectProps) {
                   {repository.forks_count}
                 </p>
               </div>
-              <p>{repository.language}</p>
+              <p>
+                <IconLanguages language={repository.language} />
+                {repository.language}
+              </p>
             </div>
           </Box>
         </li>
       </a>
     </Link>
-  )
+  );
 }

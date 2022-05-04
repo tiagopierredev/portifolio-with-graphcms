@@ -1,74 +1,74 @@
-import { useEffect, useState } from 'react'
-import { GetServerSideProps } from 'next'
-import Head from 'next/head'
+import { useEffect, useState } from "react";
+import { GetServerSideProps } from "next";
+import Head from "next/head";
 
-import { AsideBar } from '../components/AsideBar'
-import { Profile } from '../components/Profile'
-import { Links } from '../components/Links'
-import { Technologies } from '../components/Technologies'
-import { Education } from '../components/Education'
-import { SectionProjects } from '../components/SectionProjects'
-import { Posts } from '../components/Posts'
-import { BackToTop } from '../components/backToTop'
+import { AsideBar } from "../components/AsideBar";
+import { Profile } from "../components/Profile";
+import { Links } from "../components/Links";
+import { Technologies } from "../components/Technologies";
+import { Education } from "../components/Education";
+import { SectionProjects } from "../components/SectionProjects";
+import { Posts } from "../components/Posts";
+import { BackToTop } from "../components/backToTop";
 
 import {
   Post,
   PostOrderByInput,
   PostsDocument,
   Profile as ProfileProps,
-  ProfileDocument
-} from '../generated/graphql'
+  ProfileDocument,
+} from "../generated/graphql";
 
-import { api } from '../services/api'
-import client from '../lib/apollo-client'
+import { api } from "../services/api";
+import client from "../lib/apollo-client";
 
-import styles from './Home.module.scss'
+import styles from "./Home.module.scss";
 
 interface GitHubProps {
-  name: string
-  description: string
-  forks_count: number
-  language: string
-  stargazers_count: number
-  html_url: string
+  name: string;
+  description: string;
+  forks_count: number;
+  language: string;
+  stargazers_count: number;
+  html_url: string;
 }
 
 interface HomeProps {
-  profile: ProfileProps
-  github: GitHubProps[]
-  posts: Post[]
+  profile: ProfileProps;
+  github: GitHubProps[];
+  posts: Post[];
 }
 
 export default function Home({ profile, github, posts }: HomeProps) {
-  const [allPosts, setAllPost] = useState<Post[]>(posts)
+  const [allPosts, setAllPost] = useState<Post[]>(posts);
 
-  const [scrollY, SetScrollY] = useState(false)
+  const [scrollY, SetScrollY] = useState(false);
 
   async function nextPosts() {
-    const lastpost = allPosts.length
+    const lastpost = allPosts.length;
 
     const { data } = await client.query({
       query: PostsDocument,
       variables: {
         first: profile.pagination,
         orderBy: PostOrderByInput.PublishedAtDesc,
-        after: allPosts[lastpost - 1].id
-      }
-    })
+        after: allPosts[lastpost - 1].id,
+      },
+    });
     setTimeout(() => {
-      setAllPost([...allPosts, ...data.posts])
-    }, 500)
+      setAllPost([...allPosts, ...data.posts]);
+    }, 500);
   }
 
   useEffect(() => {
-    document.addEventListener('scroll', () => {
+    document.addEventListener("scroll", () => {
       if (window.scrollY > 1000) {
-        SetScrollY(true)
+        SetScrollY(true);
       } else {
-        SetScrollY(false)
+        SetScrollY(false);
       }
-    })
-  })
+    });
+  });
 
   return (
     <>
@@ -109,24 +109,24 @@ export default function Home({ profile, github, posts }: HomeProps) {
 
       <footer className={styles.footer}>Feito com 💜 por Tiago Pierre</footer>
     </>
-  )
+  );
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const { data } = await client.query({ query: ProfileDocument })
+  const { data } = await client.query({ query: ProfileDocument });
 
-  const response = await api.get('/tiagopierre/repos?per_page=2&sort=pushed')
+  const response = await api.get("/tiagopierre/repos?per_page=2&sort=pushed");
 
   const { data: posts } = await client.query({
     query: PostsDocument,
-    variables: { first: data.profile.pagination, orderBy: 'publishedAt_DESC' }
-  })
+    variables: { first: data.profile.pagination, orderBy: "publishedAt_DESC" },
+  });
 
   return {
     props: {
       profile: data.profile,
       github: response.data,
-      posts: posts.posts
-    }
-  }
-}
+      posts: posts.posts,
+    },
+  };
+};
