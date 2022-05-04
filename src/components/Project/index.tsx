@@ -1,8 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { Box } from "../Box";
 import { IconLanguages } from "../IconLanguages";
+
+import { FiStar, FiGitBranch, FiFolder } from "react-icons/fi";
 
 import styles from "./styles.module.scss";
 
@@ -25,13 +26,7 @@ export function Project({ repository }: ProjectProps) {
           <Box>
             <div className={styles.title}>
               <h3>
-                <Image
-                  src="/paste.svg"
-                  alt={repository.name}
-                  width={20}
-                  height={20}
-                  className={styles.past}
-                />
+                <FiFolder size={20} color="#837E9F" />
                 {repository.name}
               </h3>
             </div>
@@ -40,21 +35,11 @@ export function Project({ repository }: ProjectProps) {
             <div className={styles.footer}>
               <div>
                 <p>
-                  <Image
-                    src="/star.svg"
-                    alt="star count"
-                    width={20}
-                    height={20}
-                  />
+                  <FiStar size={20} color="#837E9F" />
                   {repository.stargazers_count}
                 </p>
                 <p>
-                  <Image
-                    src="/git-branch.svg"
-                    alt="git forker"
-                    width={20}
-                    height={20}
-                  />
+                  <FiGitBranch size={20} color="#837E9F" />
                   {repository.forks_count}
                 </p>
               </div>
