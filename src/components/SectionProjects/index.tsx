@@ -21,7 +21,7 @@ export function SectionProjects({ github }: SectionHomeProps) {
     <section className={styles.container}>
       <Divider
         title="My Projects"
-        url="https://github.com/tiagopierre?tab=repositories"
+        url="https://github.com/tiago-pierre-dotcodingbr?tab=repositories"
         urlName="Veja todos"
       />
       <ul className={styles.projects}>
